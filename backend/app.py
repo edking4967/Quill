@@ -3,6 +3,9 @@ from flask_cors import CORS
 from werkzeug.security import generate_password_hash, check_password_hash
 import sqlite3, os, json
 from functools import wraps
+from flask import send_from_directory
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "change-this-in-production")
@@ -10,7 +13,7 @@ app.secret_key = os.environ.get("SECRET_KEY", "change-this-in-production")
 allowed_origins = os.environ.get("ALLOWED_ORIGINS", "http://localhost:5173").split(",")
 CORS(app, supports_credentials=True, origins=allowed_origins)
 
-DB = "quill.db"
+DB = os.path.join(BASE_DIR, "quill.db")
 
 # ── Database ──────────────────────────────────────────────────────────────────
 
@@ -151,6 +154,13 @@ def create_session():
              data.get("duration", 0), data.get("wordsDelta", 0), data.get("activity", "writing"), data.get("notes", ""))
         )
     return jsonify(data)
+
+@app.route("/", defaults={"path": ""})
+@app.route("/<path:path>")
+def serve_react(path):
+    if path and os.path.exists(os.path.join(BASE_DIR, "dist", path)):
+        return send_from_directory(os.path.join(BASE_DIR, "dist"), path)
+    return send_from_directory(os.path.join(BASE_DIR, "dist"), "index.html")
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
