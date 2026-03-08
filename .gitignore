@@ -25,3 +25,5 @@ dist-ssr
 quill.db
 
 venv
+
+.env

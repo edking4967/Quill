@@ -6,7 +6,9 @@ from functools import wraps
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "change-this-in-production")
-CORS(app, supports_credentials=True, origins=["http://localhost:5173"])
+
+allowed_origins = os.environ.get("ALLOWED_ORIGINS", "http://localhost:5173").split(",")
+CORS(app, supports_credentials=True, origins=allowed_origins)
 
 DB = "quill.db"
 
