@@ -162,5 +162,6 @@ def serve_react(path):
         return send_from_directory(os.path.join(BASE_DIR, "dist"), path)
     return send_from_directory(os.path.join(BASE_DIR, "dist"), "index.html")
 
+
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
