@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, session
 from flask_cors import CORS
 from werkzeug.security import generate_password_hash, check_password_hash
-import sqlite3, os, json
+import sqlite3, os
 from functools import wraps
 from flask import send_from_directory
 
