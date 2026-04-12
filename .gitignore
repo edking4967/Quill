@@ -27,3 +27,5 @@ quill.db
 venv
 
 .env
+
+dist/
