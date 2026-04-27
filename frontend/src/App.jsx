@@ -4,11 +4,13 @@ import { today, fmt, fmtTime } from "./utils";
 import { DEMO_PROJECTS, DEMO_SESSIONS } from "./demoData";
 import "./styles.css";
 import AuthScreen from "./components/AuthScreen";
+import SplashScreen from "./components/SplashScreen";
 import StatCard from "./components/StatCard";
 import SessionForm from "./components/SessionForm";
 import ProjectCard from "./components/ProjectCard";
 import SessionList from "./components/SessionList";
 import Heatmap from "./components/Heatmap";
+import Timer from "./components/Timer";
 
 const isDemo = new URLSearchParams(window.location.search).has("demo");
 
@@ -19,6 +21,7 @@ export default function App() {
   const [activeProject, setActiveProject] = useState(null);
   const [tab, setTab] = useState("dashboard");
   const [authChecked, setAuthChecked] = useState(false);
+  const [showSplash, setShowSplash] = useState(true);
   const [newProject, setNewProject] = useState({ title: "", targetWords: "", deadline: "" });
 
   useEffect(() => {
@@ -80,6 +83,12 @@ export default function App() {
   };
 
   if (!authChecked) return null;
+  if (!user && showSplash) return (
+    <SplashScreen onEnter={(dest) => {
+      if (dest === "demo") { window.location.href = "?demo"; return; }
+      setShowSplash(false);
+    }} />
+  );
   if (!user) return <AuthScreen onAuth={handleAuth} />;
 
   const ap = projects.find(p => p.id === activeProject);
@@ -98,12 +107,12 @@ export default function App() {
   while (writingDays.has(checkD.toISOString().slice(0, 10))) {
     streak++; checkD.setDate(checkD.getDate() - 1);
   }
-
   return (
     <div className="page">
       <div className="container header">
+
         <div>
-          <h1 className="header-title">Quill</h1>
+          <h1 className="header-title">Bill</h1>
           <div className="header-subtitle">A writing progress journal</div>
         </div>
         <div className="header-right">
@@ -120,7 +129,7 @@ export default function App() {
 
       <div className="container nav">
         {["dashboard", "log", "projects", "history"].map((t, _, arr) => {
-          const labels = { dashboard: "Dashboard", log: "Log Session", projects: "Projects", history: "History" };
+            const labels = { dashboard: "Dashboard", log: "Log Session", projects: "Projects", history: "History" };
           return (
             <button key={t} className={`nav-btn${tab === t ? " active" : ""}`} onClick={() => setTab(t)}>
               {labels[t]}
@@ -136,7 +145,7 @@ export default function App() {
           projects.length === 0 ? (
             <div className="empty-state">
               <div className="empty-icon">✦</div>
-              <h2 className="empty-title">Welcome to Quill</h2>
+              <h2 className="empty-title">Welcome to Bill</h2>
               <p className="empty-subtitle">Start by creating your first project.</p>
               <button className="btn-primary" onClick={() => setTab("projects")}>Create a Project</button>
             </div>

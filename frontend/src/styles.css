@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap');*/
 
 :root {
   --font-serif: 'EB Garamond', Georgia, serif;
@@ -152,6 +152,40 @@ input:focus, select:focus, textarea:focus {
 
 .heatmap-section { margin-bottom: 2rem; }
 
+/* ── Splash ── */
+.splash-page {
+  min-height: 100vh; display: flex; align-items: center;
+  justify-content: center; background: var(--paper);
+}
+.splash-inner {
+  width: 100%; max-width: 560px; padding: 4rem 2rem;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+.splash-hero { margin-bottom: 2.5rem; }
+.splash-title {
+  font-family: var(--font-serif); font-weight: 400; font-size: 4rem;
+  color: var(--ink); line-height: 1;
+}
+.splash-tagline {
+  font-family: var(--font-serif); font-style: italic;
+  color: var(--ink-faint); font-size: 1.1rem; margin-top: 0.75rem;
+}
+.splash-body {
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  padding: 2rem 0; margin-bottom: 2.5rem; width: 100%;
+}
+.splash-copy {
+  font-family: var(--font-serif); font-size: 1rem;
+  color: var(--ink-light); line-height: 1.7;
+}
+.splash-ctas { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.splash-demo-link {
+  background: none; border: none; cursor: pointer;
+  font-family: var(--font-serif); font-style: italic;
+  color: var(--ink-faint); font-size: 0.9rem;
+}
+.splash-demo-link:hover { color: var(--accent); }
+
 /* ── Auth ── */
 .auth-page {
   min-height: 100vh; display: flex; align-items: center;
@@ -209,6 +243,48 @@ input:focus, select:focus, textarea:focus {
   padding: 0.65rem 1.5rem; cursor: pointer;
 }
 .session-success { font-family: var(--font-serif); font-style: italic; color: var(--accent); font-size: 0.9rem; }
+
+/* ── Time mode tabs ── */
+.time-mode-tabs { display: flex; gap: 1.5rem; margin-bottom: 1rem; }
+
+/* ── Timer ── */
+.timer {
+    font-family: var(--font-serif); font-size: 1.75rem; color: var(--ink); line-height: 1;
+    background: var(--paper-dark); 
+    /*border: 1px solid var(--border); */
+    padding: 1.75rem;
+    align: center;
+    text-align: center;
+    display: inline-flex;
+    flex-direction: column;
+}
+.timer-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.timer-btn {
+    margin: 1rem;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 1.1rem 3.5rem;
+    cursor: pointer;
+    display: block;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.75rem;
+    text-transform: none;
+    box-shadow: 0 4px 0 #8a5525;
+    transition: transform 80ms ease, box-shadow 80ms ease;
+}
+.timer-btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #8a5525;
+}
 
 /* ── ProjectCard ── */
 .project-card { background: var(--paper); border: 1px solid var(--border); border-radius: 2px; padding: 1.25rem 1.5rem; cursor: pointer; }

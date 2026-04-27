@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { today, ACTIVITY_LABELS } from "../utils";
+import Timer from "./Timer";
 
 export default function SessionForm({ projects, onAdd }) {
   const [form, setForm] = useState({
@@ -7,6 +8,7 @@ export default function SessionForm({ projects, onAdd }) {
     duration: "", wordsDelta: "", activity: "writing", notes: "",
   });
   const [success, setSuccess] = useState(false);
+  const [timeMode, setTimeMode] = useState("timer");
 
   useEffect(() => {
     if (projects.length && !form.projectId) setForm(f => ({ ...f, projectId: projects[0].id }));
@@ -23,6 +25,17 @@ export default function SessionForm({ projects, onAdd }) {
     <div className="session-form">
       <div className="session-form-grid">
         <div className="session-form-full">
+          <div className="time-mode-tabs">
+            <button className={`nav-btn${timeMode === "timer" ? " active" : ""}`} onClick={() => setTimeMode("timer")}>Timer</button>
+            <button className={`nav-btn${timeMode === "manual" ? " active" : ""}`} onClick={() => setTimeMode("manual")}>Manual</button>
+          </div>
+          {timeMode === "timer"
+            ? <Timer onTimeChange={mins => setForm(f => ({ ...f, duration: mins }))} />
+            : <div>
+                <label className="field-label">Duration (minutes)</label>
+                <input type="number" className="field-input" placeholder="e.g. 45" value={form.duration} onChange={e => setForm(f => ({ ...f, duration: e.target.value }))} min="0" />
+              </div>
+          }
           <label className="field-label">Project</label>
           <select className="field-input" value={form.projectId} onChange={e => setForm(f => ({ ...f, projectId: e.target.value }))}>
             {projects.map(p => <option key={p.id} value={p.id}>{p.title}</option>)}
@@ -33,14 +46,10 @@ export default function SessionForm({ projects, onAdd }) {
           <input type="date" className="field-input" value={form.date} onChange={e => setForm(f => ({ ...f, date: e.target.value }))} />
         </div>
         <div>
-          <label className="field-label">Activity</label>
+          <label className="field-label">Primary Activity</label>
           <select className="field-input" value={form.activity} onChange={e => setForm(f => ({ ...f, activity: e.target.value }))}>
             {Object.entries(ACTIVITY_LABELS).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
           </select>
-        </div>
-        <div>
-          <label className="field-label">Duration (minutes)</label>
-          <input type="number" className="field-input" placeholder="e.g. 45" value={form.duration} onChange={e => setForm(f => ({ ...f, duration: e.target.value }))} min="0" />
         </div>
         <div>
           <label className="field-label">Words written</label>

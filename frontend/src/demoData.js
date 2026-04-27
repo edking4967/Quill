@@ -6,13 +6,13 @@ const daysAgo = (n) => {
 };
 
 export const DEMO_PROJECTS = [
-  { id: "demo-1", title: "The Smog We Breathe", target_words: 90000, deadline: daysAgo(-120) },
-  { id: "demo-2", title: "Lili in Xi'an", target_words: 12000, deadline: null },
+  { id: "demo-1", title: "The Great Hamsby", target_words: 90000, deadline: daysAgo(-120) },
+  { id: "demo-2", title: "Term Report", target_words: 12000, deadline: null },
 ];
 
 export const DEMO_SESSIONS = [
   // The Smog We Breathe — spread over ~14 weeks
-  { id: "s1",  project_id: "demo-1", date: daysAgo(97), words_delta: 1200, duration: 75,  activity: "writing",       notes: "First scene, Lili arrives" },
+  { id: "s1",  project_id: "demo-1", date: daysAgo(97), words_delta: 1200, duration: 75,  activity: "writing",       notes: "First scene, Ms. Piggy arrives" },
   { id: "s2",  project_id: "demo-1", date: daysAgo(95), words_delta: 800,  duration: 55,  activity: "writing",       notes: "" },
   { id: "s3",  project_id: "demo-1", date: daysAgo(93), words_delta: 0,    duration: 40,  activity: "brainstorming", notes: "Mapped out Part One structure" },
   { id: "s4",  project_id: "demo-1", date: daysAgo(91), words_delta: 1500, duration: 90,  activity: "writing",       notes: "" },
@@ -20,7 +20,7 @@ export const DEMO_SESSIONS = [
   { id: "s6",  project_id: "demo-1", date: daysAgo(85), words_delta: 200,  duration: 60,  activity: "editing",       notes: "Cut the first two paragraphs" },
   { id: "s7",  project_id: "demo-1", date: daysAgo(83), words_delta: 1100, duration: 70,  activity: "writing",       notes: "" },
   { id: "s8",  project_id: "demo-1", date: daysAgo(80), words_delta: 900,  duration: 60,  activity: "writing",       notes: "The headmaster scene" },
-  { id: "s9",  project_id: "demo-1", date: daysAgo(78), words_delta: 0,    duration: 90,  activity: "research",      notes: "Xi'an history, 1990s" },
+  { id: "s9",  project_id: "demo-1", date: daysAgo(78), words_delta: 0,    duration: 90,  activity: "research",      notes: "New Pork history, 1990s" },
   { id: "s10", project_id: "demo-1", date: daysAgo(76), words_delta: 1300, duration: 80,  activity: "writing",       notes: "" },
   { id: "s11", project_id: "demo-1", date: daysAgo(74), words_delta: 700,  duration: 50,  activity: "writing",       notes: "" },
   { id: "s12", project_id: "demo-1", date: daysAgo(71), words_delta: 400,  duration: 45,  activity: "editing",       notes: "" },
@@ -32,11 +32,11 @@ export const DEMO_SESSIONS = [
   { id: "s18", project_id: "demo-1", date: daysAgo(57), words_delta: 1200, duration: 75,  activity: "writing",       notes: "" },
   { id: "s19", project_id: "demo-1", date: daysAgo(55), words_delta: 900,  duration: 60,  activity: "writing",       notes: "" },
   { id: "s20", project_id: "demo-1", date: daysAgo(52), words_delta: 600,  duration: 45,  activity: "writing",       notes: "" },
-  { id: "s21", project_id: "demo-1", date: daysAgo(50), words_delta: 1400, duration: 85,  activity: "writing",       notes: "Pond's letter scene" },
+  { id: "s21", project_id: "demo-1", date: daysAgo(50), words_delta: 1400, duration: 85,  activity: "writing",       notes: "Hamsby meets Ms. Piggy" },
   { id: "s22", project_id: "demo-1", date: daysAgo(48), words_delta: 300,  duration: 35,  activity: "editing",       notes: "" },
   { id: "s23", project_id: "demo-1", date: daysAgo(45), words_delta: 1100, duration: 70,  activity: "writing",       notes: "" },
   { id: "s24", project_id: "demo-1", date: daysAgo(43), words_delta: 800,  duration: 55,  activity: "writing",       notes: "" },
-  { id: "s25", project_id: "demo-1", date: daysAgo(40), words_delta: 0,    duration: 60,  activity: "research",      notes: "Air quality records" },
+  { id: "s25", project_id: "demo-1", date: daysAgo(40), words_delta: 0,    duration: 60,  activity: "research",      notes: "The green light" },
   { id: "s26", project_id: "demo-1", date: daysAgo(38), words_delta: 1700, duration: 100, activity: "writing",       notes: "Best session in weeks" },
   { id: "s27", project_id: "demo-1", date: daysAgo(36), words_delta: 1000, duration: 65,  activity: "writing",       notes: "" },
   { id: "s28", project_id: "demo-1", date: daysAgo(34), words_delta: 500,  duration: 40,  activity: "editing",       notes: "" },
@@ -56,7 +56,7 @@ export const DEMO_SESSIONS = [
   { id: "s42", project_id: "demo-1", date: daysAgo(2),  words_delta: 900,  duration: 60,  activity: "writing",       notes: "" },
   { id: "s43", project_id: "demo-1", date: daysAgo(1),  words_delta: 1100, duration: 70,  activity: "writing",       notes: "Good momentum" },
   // Lili in Xi'an — a shorter project
-  { id: "s50", project_id: "demo-2", date: daysAgo(30), words_delta: 800,  duration: 55,  activity: "writing",       notes: "Opening scene" },
+  { id: "s50", project_id: "demo-2", date: daysAgo(30), words_delta: 800,  duration: 55,  activity: "writing",       notes: "Opening paragraph" },
   { id: "s51", project_id: "demo-2", date: daysAgo(26), words_delta: 1100, duration: 70,  activity: "writing",       notes: "" },
   { id: "s52", project_id: "demo-2", date: daysAgo(21), words_delta: 600,  duration: 45,  activity: "editing",       notes: "" },
   { id: "s53", project_id: "demo-2", date: daysAgo(14), words_delta: 900,  duration: 60,  activity: "writing",       notes: "" },

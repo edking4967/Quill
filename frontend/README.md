@@ -18,3 +18,7 @@ If you are developing a production application, we recommend using TypeScript wi
 ## Run server: 
 
 npm run dev
+
+## Compile to ../backend/dist:
+
+npm run dev

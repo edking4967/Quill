@@ -1,98 +1,56 @@
-export default function Timer () {
-    const [time, setTime] = useState(0);  
+import React, { useState, useEffect } from 'react';
+
+export default function Timer ({ onTimeChange }) {
+    const [time, setTime] = useState(0);
+    const [running, setRunning] = useState(false);
     const [start, setStart] = useState(false);
 
     let seconds = ("0" + (Math.floor((time / 1000) % 60) % 60)).slice(-2);
     let minutes = ("0" + Math.floor((time / 60000) % 60)).slice(-2);
-    let hours = ("0" + Math.floor((time / 3600000) % 60)).slice(-2);
+    let hours = ("0" + Math.floor((time / 3600000) % 99)).slice(-2);
+
 
     useEffect(() => {
-
         let interval = null;
-
-        if (start) {
-
+        if (running) {
             interval = setInterval(() => {
-
-                if (time > 0) {
-
-                    setTime(prevTime => prevTime - 10)
-                }
-
-            }, 10)
-
-        } else {
-            clearInterval(interval);
+                setTime(prevTime => {
+                    const next = prevTime + 10;
+                    if (onTimeChange) onTimeChange(Math.floor(next / 60000));
+                    return next;
+                });
+            }, 10);
         }
-
-        return () => {
-            clearInterval(interval)
-        }
-
-    }, [start])
-
-    function adjustTimer(input) {
-
-        if (!start) {
-
-            switch (input) {
-
-                case "incHours":
-                    setTime(prevTime => prevTime + 3600000)
-                    break;
-
-                case "incMinutes":
-                    setTime(prevTime => prevTime + 60000)
-                    break;
-
-                case "incSeconds":
-                    setTime(prevTime => prevTime + 1000)
-                    break;
-
-                case "decHours":
-                    setTime(prevTime => prevTime - 3600000)
-
-                case "decMinutes":
-                    setTime(prevTime => prevTime - 60000)
-                    break;
-
-                case "decSeconds":
-                    setTime(prevTime => prevTime - 1000)
-                    break;
-
-                default:
-                    break;
-            }
-
-        }
-
-    }
+        return () => clearInterval(interval);
+    }, [running]);
 
     return (
+        <div className="timer-wrapper">
+            <div className="timer">
+                <div className="timer-clock">{hours} : {minutes} : {seconds}</div>
+                <div className="timer-buttons">
+                    { !start && (
+                        <button className="btn-primary timer-btn" onClick={() => {setRunning(true); setStart(true);}}>Start session</button>
+                    )}
+                    { start && running && (
+                        <button className="btn-primary timer-btn" onClick={() => setRunning(false)}>Pause</button>
 
-        <div className="App">
+                    )}
 
-            <button onClick={() => adjustTimer("incHours")}>&#8679;</button>
+                    { start && !running && (
+                        <button className="btn-primary timer-btn" onClick={() => setRunning(true) }>Resume</button>
+                    )}
 
-            <button onClick={() => adjustTimer("incMinutes")}>&#8679;</button>
-
-            <button onClick={() => adjustTimer("incSeconds")}>&#8679;</button>
-
-            <div>{hours} : {minutes} : {seconds}</div>
-
-            <button onClick={() => adjustTimer("decHours")}>&#8681;</button>
-
-            <button onClick={() => adjustTimer("decMinutes")}>&#8681;</button>
-
-            <button onClick={() => adjustTimer("decSeconds")}>&#8681;</button> <br/><br/>
-
-            <button onClick={() => setStart(true)}>Start</button>
-
-            <button onClick={() => setStart(false)}>Stop</button>
-
-            <button onClick={() => {setStart(false); setTime(0)}}>Reset</button>
-
+                    { start && (
+                        <button className="btn-primary timer-btn" onClick={() => { 
+                            setRunning(false); 
+                            setTime(0); 
+                            if (onTimeChange) 
+                                onTimeChange(0); }}>End session
+                        </button>
+                    )}
+                </div>
+            </div>
         </div>
-
     );
 }
