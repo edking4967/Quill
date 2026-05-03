@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <style>
+  /* Base layout */
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background: #fff;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.3;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.3em;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.2em;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  /* Text */
+  p {
+    margin: 1em 0;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  /* Links */
+  a {
+    color: #0066cc;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Lists */
+  ul, ol {
+    margin: 1em 0 1em 1.5em;
+  }
+
+  li {
+    margin: 0.4em 0;
+  }
+
+  /* Code — modern font stack, solarized light inline */
+  code {
+    font-family: "JetBrains Mono", "Fira Code", "Cascadia Code",
+                 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.875em;
+    background: #eee8d5;
+    color: #657b83;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+  }
+
+  pre {
+    background: #fdf6e3 !important;
+    padding: 1.1em 1.25em;
+    overflow-x: auto;
+    border-radius: 6px;
+    border: 1px solid #e8dfc8;
+  }
+
+  pre code {
+    padding: 0;
+    background: none;
+    color: inherit;
+  }
+
+  div.sourceCode {
+    background: #fdf6e3 !important;
+    border-radius: 6px;
+    border: 1px solid #e8dfc8;
+  }
+
+  /* Solarized Light syntax token overrides */
+  code span.al { color: #dc322f; font-weight: bold; }   /* Alert */
+  code span.an { color: #586e75; font-style: italic; }  /* Annotation */
+  code span.at { color: #657b83; }                       /* Attribute */
+  code span.bn { color: #2aa198; }                       /* BaseN */
+  code span.bu { color: #268bd2; }                       /* BuiltIn */
+  code span.cf { color: #859900; font-weight: bold; }   /* ControlFlow */
+  code span.ch { color: #2aa198; }                       /* Char */
+  code span.cn { color: #2aa198; }                       /* Constant */
+  code span.co { color: #93a1a1; font-style: italic; }  /* Comment */
+  code span.cv { color: #586e75; font-style: italic; }  /* CommentVar */
+  code span.do { color: #586e75; font-style: italic; }  /* Documentation */
+  code span.dt { color: #b58900; }                       /* DataType */
+  code span.dv { color: #2aa198; }                       /* DecVal */
+  code span.er { color: #dc322f; font-weight: bold; }   /* Error */
+  code span.ex { color: #268bd2; }                       /* Extension */
+  code span.fl { color: #2aa198; }                       /* Float */
+  code span.fu { color: #268bd2; }                       /* Function */
+  code span.im { color: #2aa198; }                       /* Import */
+  code span.in { color: #586e75; font-style: italic; }  /* Information */
+  code span.kw { color: #859900; }                       /* Keyword */
+  code span.op { color: #657b83; }                       /* Operator */
+  code span.ot { color: #268bd2; }                       /* Other */
+  code span.pp { color: #cb4b16; }                       /* Preprocessor */
+  code span.sc { color: #2aa198; }                       /* SpecialChar */
+  code span.ss { color: #2aa198; }                       /* SpecialString */
+  code span.st { color: #2aa198; }                       /* String */
+  code span.va { color: #cb4b16; }                       /* Variable */
+  code span.vs { color: #2aa198; }                       /* VerbatimString */
+  code span.wa { color: #cb4b16; font-style: italic; }  /* Warning */
+
+  /* Blockquotes */
+  blockquote {
+    margin: 1.5em 0;
+    padding-left: 1em;
+    border-left: 4px solid #ddd;
+    color: #555;
+  }
+
+  /* Tables */
+  table {
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    width: 100%;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 0.5em 0.75em;
+    text-align: left;
+  }
+
+  th {
+    background: #f5f5f5;
+  }
+
+  /* Horizontal rule */
+  hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 2em 0;
+  }
+
+  figcaption {
+    font-style: italic;
+    font-size: 80%;
+  }
+  </style>
+</head>
+<body>
+<h1 id="bill">Bill</h1>
+<p><strong>Your writing’s missing progress bar.</strong></p>
+<p>Bill is a personal writing tracker for long-form projects — novels,
+dissertations, screenplays, anything with a word count and a deadline.
+Log sessions, watch your heatmap fill in, and see exactly where you
+stand.</p>
+<p>Live demo: <a
+href="https://edking4967.pythonanywhere.com/?demo">edking4967.pythonanywhere.com</a></p>
+<hr />
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Dashboard</strong> — word count progress bar, session stats,
+and a 16-week writing heatmap per project</li>
+<li><strong>Session logging</strong> — record time spent, words written,
+activity type (writing, editing, brainstorming, research), and
+notes</li>
+<li><strong>Built-in timer</strong> — start/pause/end a session timer
+that feeds duration directly into the log form</li>
+<li><strong>Multiple projects</strong> — track novels, scripts, or any
+other work-in-progress side by side</li>
+<li><strong>History view</strong> — all-time stats and heatmap across
+every project at once</li>
+<li><strong>Demo mode</strong> — try the full app at <code>?demo</code>
+with no account required</li>
+<li><strong>Streak counter</strong> — consecutive days of writing shown
+in the header</li>
+</ul>
+<h2 id="tech-stack">Tech Stack</h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Technology</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Backend</td>
+<td>Python / Flask</td>
+</tr>
+<tr>
+<td>Database</td>
+<td>SQLite</td>
+</tr>
+<tr>
+<td>Frontend</td>
+<td>React + Vite</td>
+</tr>
+<tr>
+<td>Auth</td>
+<td>Session cookies, passwords hashed with Werkzeug</td>
+</tr>
+<tr>
+<td>Hosting</td>
+<td>PythonAnywhere (free tier)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="project-structure">Project Structure</h2>
+<pre><code>quill/
+  backend/
+    app.py          # Flask app — all API routes + static file serving
+    quill.db        # SQLite database (gitignored, lives on server)
+    dist/           # Built React app (committed, served by Flask)
+  frontend/
+    src/
+      App.jsx               # Root component, routing, state
+      api.js                # Fetch wrapper
+      utils.js              # Date helpers, activity labels
+      demoData.js           # Fake data for ?demo mode
+      components/
+        AuthScreen.jsx      # Login / register form
+        SplashScreen.jsx    # Landing page
+        SessionForm.jsx     # Log-a-session form with timer
+        Timer.jsx           # Start / pause / end stopwatch
+        ProjectCard.jsx     # Project summary card
+        StatCard.jsx        # Single stat display
+        SessionList.jsx     # Chronological session list
+        Heatmap.jsx         # GitHub-style writing activity grid</code></pre>
+<h2 id="running-locally">Running Locally</h2>
+<p><strong>Backend</strong></p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> backend</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv venv</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> venv/bin/activate</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install flask flask-cors werkzeug python-dotenv</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> app.py</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Runs on http://localhost:5000</span></span></code></pre></div>
+<p><strong>Frontend</strong></p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> frontend</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run dev</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Runs on http://localhost:5173</span></span></code></pre></div>
+<p>The frontend proxies API calls to Flask via Vite’s dev server. In
+production, Flask serves the built React app directly from
+<code>backend/dist/</code>.</p>
+<h2 id="deployment">Deployment</h2>
+<p>Bill is designed for PythonAnywhere’s free tier. Because
+PythonAnywhere can’t run Node.js, the React build is committed to the
+repo under <code>backend/dist/</code> and Flask serves it as static
+files.</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Build and commit before pushing</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> frontend</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> run build    <span class="co"># outputs to ../backend/dist/</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add backend/dist</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Build frontend&quot;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code></pre></div>
+<p>On PythonAnywhere, pull the repo and set the WSGI file to point at
+<code>backend/app.py</code>. Set <code>SECRET_KEY</code> and
+<code>ALLOWED_ORIGINS</code> in a <code>.env</code> file in the backend
+directory.</p>
+<p>See <a href="doc/blog/self-hosting.md">doc/blog/self-hosting.md</a>
+for a full step-by-step guide.</p>
+<h2 id="api">API</h2>
+<p>All routes are under <code>/api</code> and require a session cookie
+(set on login) except <code>/register</code>, <code>/login</code>, and
+<code>/me</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>POST</td>
+<td><code>/api/register</code></td>
+<td>Create account</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/login</code></td>
+<td>Log in</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/logout</code></td>
+<td>Log out</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/me</code></td>
+<td>Current session user</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/projects</code></td>
+<td>List user’s projects</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/projects</code></td>
+<td>Create a project</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/sessions</code></td>
+<td>List user’s sessions</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/sessions</code></td>
+<td>Log a session</td>
+</tr>
+</tbody>
+</table>
+<h2 id="environment-variables">Environment Variables</h2>
+<p>Create a <code>.env</code> file in <code>backend/</code>:</p>
+<pre><code>SECRET_KEY=your-secret-key-here
+ALLOWED_ORIGINS=https://yourdomain.pythonanywhere.com</code></pre>
+<h2 id="license">License</h2>
+<p>MIT</p>
+</body>
+</html>

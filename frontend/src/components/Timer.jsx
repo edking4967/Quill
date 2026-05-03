@@ -44,6 +44,7 @@ export default function Timer ({ onTimeChange }) {
                     { start && (
                         <button className="btn-primary timer-btn" onClick={() => { 
                             setRunning(false); 
+                            setStart(false);
                             setTime(0); 
                             if (onTimeChange) 
                                 onTimeChange(0); }}>End session
