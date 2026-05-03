@@ -1,8 +1,8 @@
-# Bill
+# Quill
 
 **Your writing's missing progress bar.**
 
-Bill is a personal writing tracker for long-form projects — novels, dissertations, screenplays, anything with a word count and a deadline. Log sessions, watch your heatmap fill in, and see exactly where you stand.
+Quill is a personal writing tracker for long-form projects — novels, dissertations, screenplays, anything with a word count and a deadline. Log sessions, watch your heatmap fill in, and see exactly where you stand.
 
 Live demo: [edking4967.pythonanywhere.com](https://edking4967.pythonanywhere.com/?demo)
 
@@ -79,7 +79,7 @@ The frontend proxies API calls to Flask via Vite's dev server. In production, Fl
 
 ## Deployment
 
-Bill is designed for PythonAnywhere's free tier. Because PythonAnywhere can't run Node.js, the React build is committed to the repo under `backend/dist/` and Flask serves it as static files.
+Quill is designed for PythonAnywhere's free tier. Because PythonAnywhere can't run Node.js, the React build is committed to the repo under `backend/dist/` and Flask serves it as static files.
 
 ```bash
 # Build and commit before pushing

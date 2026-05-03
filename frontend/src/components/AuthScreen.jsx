@@ -20,7 +20,7 @@ export default function AuthScreen({ onAuth }) {
     <div className="auth-page">
       <div className="auth-inner">
         <div className="auth-logo">
-          <h1 className="auth-logo-title">Bill</h1>
+          <h1 className="auth-logo-title">Quill</h1>
           <p className="auth-logo-sub">A writing progress journal</p>
         </div>
 

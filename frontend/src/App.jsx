@@ -112,7 +112,7 @@ export default function App() {
       <div className="container header">
 
         <div>
-          <h1 className="header-title">Bill</h1>
+          <h1 className="header-title">Quill</h1>
           <div className="header-subtitle">A writing progress journal</div>
         </div>
         <div className="header-right">
@@ -145,7 +145,7 @@ export default function App() {
           projects.length === 0 ? (
             <div className="empty-state">
               <div className="empty-icon">✦</div>
-              <h2 className="empty-title">Welcome to Bill</h2>
+              <h2 className="empty-title">Welcome to Quill</h2>
               <p className="empty-subtitle">Start by creating your first project.</p>
               <button className="btn-primary" onClick={() => setTab("projects")}>Create a Project</button>
             </div>

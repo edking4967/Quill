@@ -1,6 +1,6 @@
-# Getting Started with Bill
+# Getting Started with Quill
 
-Bill is a writing progress tracker built for long-form projects. If you've ever found yourself with a 90,000-word novel to write and no idea how fast you're actually moving, Bill is for you.
+Quill is a writing progress tracker built for long-form projects. If you've ever found yourself with a 90,000-word novel to write and no idea how fast you're actually moving, Quill is for you.
 
 This post walks through everything from creating an account to reading your first heatmap.
 
@@ -8,7 +8,7 @@ This post walks through everything from creating an account to reading your firs
 
 ## Try it first
 
-Before you sign up, visit the live app and click **Try the demo**. This loads a fully working version of Bill with fake data — no account needed, nothing saved. It's a good way to get a feel for the interface before committing.
+Before you sign up, visit the live app and click **Try the demo**. This loads a fully working version of Quill with fake data — no account needed, nothing saved. It's a good way to get a feel for the interface before committing.
 
 ---
 
@@ -20,7 +20,7 @@ Click **Sign In / Create Account** on the splash screen. Enter an email and pass
 
 ## Your first project
 
-After logging in you'll see an empty dashboard. Bill organizes everything by **project** — a project is any long-form work with a word count goal.
+After logging in you'll see an empty dashboard. Quill organizes everything by **project** — a project is any long-form work with a word count goal.
 
 Go to the **Projects** tab and fill in:
 
@@ -103,7 +103,7 @@ If you've written (i.e., logged at least one session with a positive word count)
 
 **Log editing sessions too.** Setting the activity to "Editing" and leaving words at 0 still builds your time total and heatmap — which matters if you spend weeks in revision.
 
-**Back-date freely.** Bill doesn't care when you log; it only cares about the date you assign to each session. If you wrote 1,200 words last Thursday and forgot to log it, go ahead and add it with Thursday's date.
+**Back-date freely.** Quill doesn't care when you log; it only cares about the date you assign to each session. If you wrote 1,200 words last Thursday and forgot to log it, go ahead and add it with Thursday's date.
 
 **Use notes.** Even a single sentence — "got stuck at the chapter break, tried a POV switch" — is enormously useful when you look back months later.
 

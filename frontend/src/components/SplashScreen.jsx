@@ -4,7 +4,7 @@ export default function SplashScreen({ onEnter }) {
       <div className="splash-inner">
 
         <div className="splash-hero">
-          <h1 className="splash-title">Bill</h1>
+          <h1 className="splash-title">Quill</h1>
           <p className="splash-tagline">Your writing's missing progress bar</p>
         </div>
 
